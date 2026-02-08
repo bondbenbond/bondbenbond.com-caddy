@@ -1,0 +1,21 @@
+services:
+  caddy:
+    image: caddy:2
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - /srv/www:/srv/www:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - caddy-net
+
+networks:
+  caddy-net:
+    external: true
+
+volumes:
+  caddy_data:
+  caddy_config:

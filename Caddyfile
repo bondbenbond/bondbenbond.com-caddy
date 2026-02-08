@@ -1,0 +1,20 @@
+bondbenbond.com, www.bondbenbond.com {
+  root * /srv/www/bondbenbond.com
+  file_server
+}
+
+test-werewolf.bondbenbond.com {
+  reverse_proxy werewolf-web-test:80
+}
+
+test-api-werewolf.bondbenbond.com {
+  reverse_proxy werewolf-server-test:4000
+}
+
+werewolf.bondbenbond.com {
+  reverse_proxy werewolf-web:80
+}
+
+api-werewolf.bondbenbond.com {
+  reverse_proxy werewolf-server:4000
+}
