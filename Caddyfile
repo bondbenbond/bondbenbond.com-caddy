@@ -18,3 +18,11 @@ werewolf.bondbenbond.com {
 api-werewolf.bondbenbond.com {
   reverse_proxy werewolf-server:4000
 }
+
+auth-api.bondbenbond.com {
+  reverse_proxy oauth-integration-api:8080
+}
+
+auth-ui.bondbenbond.com {
+  reverse_proxy oauth-integration-ui:80
+}
